@@ -1,3 +1,15 @@
+// INSERTION SORT IMPLEMENTATION
+
+// PSEUDOCODE: 
+// two iterators, pointing at first and second elements
+// compare, swap if first < second
+// decrement both iterators and compare and swap again, 
+// decrement again until no swap OR first == begin
+// advance both iterators back to the end of the sorted subarray 
+// (first on end of subarray, second on one past that one)
+// need iterator to point to the end of the sorted subarray and stay there to mark how far we've sorted
+// end if sorted points to the end of vector
+
 #include <cstddef>
 #include <iostream>
 #include <vector> 
@@ -37,23 +49,13 @@ void InsertionSort(vector<int>& nums){
             }
         }
         ++sorted;
-        PrintVector(nums);
     }
 }
 
 int main() {
-    vector<int> nums = {4, 5, 2, 3, 1};
+    vector<int> nums = {-10, 10, 5, 0, 0, 5, 10, -10};
     InsertionSort(nums);
     PrintVector(nums);
-
-    // two iterators, pointing at first and second elements
-    // compare, swap if first < second
-    // decrement both iterators and compare and swap again, 
-    // decrement again until no swap OR first == begin
-    // advance both iterators back to the end of the sorted subarray 
-    // (first on end of subarray, second on one past that one)
-    // need iterator to point to the end of the sorted subarray and stay there to mark how far we've sorted
-    // end if sorted points to the end of vector
 
     return 0;
 }
